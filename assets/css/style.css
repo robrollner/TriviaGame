@@ -1,5 +1,43 @@
-.jumbotron {
+body {
+	padding: 25px;
+	background-image: url(https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/backgroundImage.jpeg);
+}
+#titleBox {
+	border: 5px ridge black;
 	text-align: center;
-	color: #ec1bba;
-	/*padding: 50px;*/
+	color: yellow;
+	background: rgba(15, 25, 45, 0.65); 
+}
+
+#questionBox {
+	text-align: center;
+	font-size: 25px;
+	background: rgba(15, 25, 45, 0.65); 
+	color: yellow;
+	border: 5px ridge black;
+	height: 200px;
+}
+
+#timer {
+	text-align: center;
+	font-size: 125px;
+	background: rgba(15, 25, 45, 0.65); 
+	color: yellow;
+	border: 5px ridge black;
+	height: 200px;
+}
+
+#playerScore {
+	text-align: center;
+	font-size: 25px;
+	background: rgba(15, 25, 45, 0.65); 
+	color: yellow;
+	border: 5px ridge black;
+	height: 200px;
+}
+
+.btn {
+	background: rgba(15, 25, 45, 0.65); 
+	color: yellow;
+	border: 5px ridge black;
 }

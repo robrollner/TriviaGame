@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TriviaGame</title>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<title>Simpsons Trivia Game</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> 
+	<!--reset-->
+	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--bootstrap-->
+	
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!--personal Style sheet-->
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
+  	<!--jQuery-->
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="jumbotron">
-				<h1>Trivia Game!</h1>
-				
+			<div class="jumbotron" id=titleBox>
+				<h1>The Unauthorized Simpsons Trivia Game!</h1> 
+				<h3>Extravaganza!</h3> 
+				<h5>Patent Pending!</h5>		
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-md-2"></div>
+			<div class="col-xs-12 col-md-2" id="playerScore">
+				<p>Correct Guesses: </p>
+				<p>Incorrect Guesses: </p>
+			</div>
 			<div class="col-xs-12 col-md-8">
+				<div class="jumbotron" id="questionBox">Question Goes here</div>			
+			</div>
+			<div class="col-xs-12 col-md-2" id="timer">30</div><a href="#" class="btn btn-primary btn-sm btn-success" id="start">Press Start!</a><a href="#" class="btn btn-primary btn-sm btn-danger" id="stop">End Game!</a>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-2"></div>
+			<div class="col-xs-12 col-md-8" id="guessBox">
+				<a href="#" class="btn btn-default btn-lg btn-block btn-info">First Available Guess</a>
+				<a href="#" class="btn btn-default btn-lg btn-block btn-info">Second Available Guess</a>
+				<a href="#" class="btn btn-default btn-lg btn-block btn-info">Third Available Guess</a>
+				<a href="#" class="btn btn-default btn-lg btn-block btn-info">Fourth Available Guess</a>
 				
 			</div>
 			<div class="col-xs-12 col-md-2"></div>
