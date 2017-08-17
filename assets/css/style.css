@@ -41,3 +41,10 @@ body {
 	color: yellow;
 	border: 5px ridge black;
 }
+
+#NelsonGif {
+	height: 190px;
+	width: 240px;
+	float: left;
+	
+}
