@@ -16,6 +16,7 @@ body {
 	color: yellow;
 	border: 5px ridge black;
 	height: 200px;
+	clear: both;
 }
 
 #timer {
@@ -42,9 +43,10 @@ body {
 	border: 5px ridge black;
 }
 
-#NelsonGif {
+#resultGif {
 	height: 190px;
 	width: 240px;
 	float: left;
+	box-sizing: border-box;
 	
 }
