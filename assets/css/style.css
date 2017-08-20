@@ -11,6 +11,7 @@ body {
 } 
 
 .jumbotron {
+    text-align: center;
     border: 5px ridge black;
     color: yellow;
     background: rgba(15, 25, 45, 0.65);
