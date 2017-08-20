@@ -23,15 +23,35 @@ console.log(questions[0].choices[0]);
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
+var timer = 30;
+var intervalId;
 
 $(document).ready(function() {
+
+    intervalId = setInterval(decrement, 1000);
 
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
+    function decrement() {
+        timer--;
+        $('.timer').html(timer);
+        if (timer === 0) {
+            stop();
+            $('.timer').html("I said Ha ha!!!");
+            $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/NelsonGif.gif" />');
+        }
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+        var timer = 10;
+    }
+
     // On clicking next, display the next question
     $(this).find(".nextButton").on("click", function() {
+
         if (!quizOver) {
 
             value = $("input[type='radio']:checked").val();
@@ -48,8 +68,12 @@ $(document).ready(function() {
                 }
 
                 currentQuestion++; // Since we have already displayed the first question on DOM ready
+                stop();
+
                 if (currentQuestion < questions.length) {
                     displayCurrentQuestion();
+                    decrement();
+
                 } else {
                     displayScore();
                     $(document).find(".nextButton").text("Play Again?");
@@ -93,12 +117,21 @@ function displayCurrentQuestion() {
 function resetQuiz() {
     currentQuestion = 0;
     correctAnswers = 0;
+
     hideScore();
 }
 
 function displayScore() {
     $(document).find(".container-fluid > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
     $(document).find(".container-fluid > .result").show();
+
+    if (correctAnswers >= questions.length / 2) {
+
+        $('.timer').html("Woo Hoo!");
+        $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/WooHooGif.gif" />');
+        stop();
+    }
+
 }
 
 function hideScore() {

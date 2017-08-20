@@ -3,6 +3,13 @@ body {
     background-image: url(https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/backgroundImage.jpeg);
 }
 
+.timer { 
+    /*background: rgba(15, 25, 45, 0.65);*/
+    text-align: center;
+    /*border: 5px ridge black;*/
+    font-size: 100px;
+} 
+
 .jumbotron {
     border: 5px ridge black;
     color: yellow;
@@ -16,13 +23,14 @@ body {
 .nextButton {
     background: rgba(15, 25, 45, 0.65);
     text-align: center;
-    border: 5px ridge black;
+    border: 1px ridge black;
     font-size: 25px;
     color: yellow;
+
 }
 
 .choiceList {
-	text-align: left;
-	padding-left: 30%;
-	font-size: 40px;
+    text-align: left;
+    padding-left: 30%;
+    font-size: 40px;
 }
