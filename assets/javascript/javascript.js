@@ -1,45 +1,37 @@
-/**
- * Created with JetBrains WebStorm.
- * User: pwanwu
- * Date: 18/09/2013
- * Time: 17:41
- * To change this template use File | Settings | File Templates.
- */
-
 var questions = [{
-    question: "What is the population of Brazil?",
-    choices: ["145 million", "199 million", "182 million", "205 million"],
+    question: "What is Mr. Burns First Name?",
+    choices: ["I don't know...", "Barney", "Waylon", "Charles"],
+    correctAnswer: 3
+}, {
+    question: "What college did Dr. Nick Riviera graduate from?",
+    choices: ["Shelbyville state", "Hollywood Upstairs Medical College", "Springfield U", "Cornell"],
     correctAnswer: 1
 }, {
-    question: "What is 27*14?",
-    choices: ["485", "634", "408", "528"],
+    question: "What smells like a steak and seats 35?",
+    choices: ["Canyonero", "Rawhidanator", "Homer Simpson", "Springfield elementary school bus"],
+    correctAnswer: 0
+}, {
+    question: "Who voiced Maggie Simpson?",
+    choices: ["Yeardley Smith", "Elizabeth Hurley", "Elizabeth Taylor", "Julie Kavner"],
     correctAnswer: 2
-}, {
-    question: "What is the busiest train station in the world?",
-    choices: ["Grand Central, NY", "Shibuya, Tokyo", "Beijing Central, Chine", "Gard du Nord, Paris"],
-    correctAnswer: 1
-}, {
-    question: "What is the longest river?",
-    choices: ["Nile", "Amazon", "Mississippi", "Yangtze"],
-    correctAnswer: 0
-}, {
-    question: "What is the busiest tube station in the London?",
-    choices: ["Waterloo", "Baker Street", "Kings Cross", "Victoria"],
-    correctAnswer: 0
 }];
+
+console.log(questions[0].question);
+console.log(questions[0].choices[0]);
+
 
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     // Display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
     // On clicking next, display the next question
-    $(this).find(".nextButton").on("click", function () {
+    $(this).find(".nextButton").on("click", function() {
         if (!quizOver) {
 
             value = $("input[type='radio']:checked").val();
@@ -60,9 +52,6 @@ $(document).ready(function () {
                     displayCurrentQuestion();
                 } else {
                     displayScore();
-                    //                    $(document).find(".nextButton").toggle();
-                    //                    $(document).find(".playAgainButton").toggle();
-                    // Change the text in the next button to ask if user wants to play again
                     $(document).find(".nextButton").text("Play Again?");
                     quizOver = true;
                 }
@@ -84,8 +73,8 @@ function displayCurrentQuestion() {
     console.log("In display current Question");
 
     var question = questions[currentQuestion].question;
-    var questionClass = $(document).find(".quizContainer > .question");
-    var choiceList = $(document).find(".quizContainer > .choiceList");
+    var questionClass = $(document).find(".container-fluid > .question");
+    var choiceList = $(document).find(".container-fluid > .choiceList");
     var numChoices = questions[currentQuestion].choices.length;
 
     // Set the questionClass text to the current question
@@ -108,8 +97,8 @@ function resetQuiz() {
 }
 
 function displayScore() {
-    $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
-    $(document).find(".quizContainer > .result").show();
+    $(document).find(".container-fluid > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
+    $(document).find(".container-fluid > .result").show();
 }
 
 function hideScore() {

@@ -1,52 +1,28 @@
 body {
-	padding: 25px;
-	background-image: url(https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/backgroundImage.jpeg);
-}
-#titleBox {
-	border: 5px ridge black;
-	text-align: center;
-	color: yellow;
-	background: rgba(15, 25, 45, 0.65); 
+    padding: 25px;
+    background-image: url(https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/backgroundImage.jpeg);
 }
 
-#questionBox {
-	text-align: center;
-	font-size: 25px;
-	background: rgba(15, 25, 45, 0.65); 
-	color: yellow;
-	border: 5px ridge black;
-	height: 200px;
-	clear: both;
+.jumbotron {
+    border: 5px ridge black;
+    color: yellow;
+    background: rgba(15, 25, 45, 0.65);
 }
 
-#timer {
-	text-align: center;
-	font-size: 125px;
-	background: rgba(15, 25, 45, 0.65); 
-	color: yellow;
-	border: 5px ridge black;
-	height: 200px;
+.question,
+.choiceList,
+.quizMessage,
+.result,
+.nextButton {
+    background: rgba(15, 25, 45, 0.65);
+    text-align: center;
+    border: 5px ridge black;
+    font-size: 25px;
+    color: yellow;
 }
 
-#playerScore {
-	text-align: center;
-	font-size: 25px;
-	background: rgba(15, 25, 45, 0.65); 
-	color: yellow;
-	border: 5px ridge black;
-	height: 200px;
-}
-
-.btn {
-	background: rgba(15, 25, 45, 0.65); 
-	color: yellow;
-	border: 5px ridge black;
-}
-
-#resultGif {
-	height: 190px;
-	width: 240px;
-	float: left;
-	box-sizing: border-box;
-	
+.choiceList {
+	text-align: left;
+	padding-left: 30%;
+	font-size: 40px;
 }
