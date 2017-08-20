@@ -23,7 +23,7 @@ console.log(questions[0].choices[0]);
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
-var timer = 30;
+var timer = 10;
 var intervalId;
 
 $(document).ready(function() {
@@ -34,13 +34,22 @@ $(document).ready(function() {
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
+    function resetTimer() {
+        timer = 10;
+        $('.timer').html("I said Ha ha!!!");
+        $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/NelsonGif.gif" />');
+    }
+
     function decrement() {
         timer--;
         $('.timer').html(timer);
         if (timer === 0) {
             stop();
-            $('.timer').html("I said Ha ha!!!");
-            $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/NelsonGif.gif" />');
+            $('.timer').html('<h2 class="timer">' + 10 + '</h2>');
+
+            // $('.timer').html("I said Ha ha!!!");
+            // $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/NelsonGif.gif" />');
+            resetTimer();
         }
     }
 
@@ -70,9 +79,11 @@ $(document).ready(function() {
                 currentQuestion++; // Since we have already displayed the first question on DOM ready
                 stop();
 
+
+
                 if (currentQuestion < questions.length) {
                     displayCurrentQuestion();
-                    decrement();
+                    // decrement();
 
                 } else {
                     displayScore();
