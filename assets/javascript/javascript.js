@@ -47,9 +47,9 @@ $(document).ready(function() {
             stop();
             $('.timer').html('<h2 class="timer">' + 10 + '</h2>');
 
-            // $('.timer').html("I said Ha ha!!!");
-            // $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/NelsonGif.gif" />');
+
             resetTimer();
+            timer = 10;
         }
     }
 
@@ -142,6 +142,10 @@ function displayScore() {
         $('.timer').html("Woo Hoo!");
         $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/WooHooGif.gif" />');
         stop();
+    } else {
+
+        $('.timer').html("D'oh!!!");
+        $('.timer').slideUp(1000).delay(300).fadeIn(1000).append('<img class="img-responsive" id="resultGif" src="https://raw.githubusercontent.com/robrollner/TriviaGame/master/assets/images/dohGif.gif" />');
     }
 
 }
